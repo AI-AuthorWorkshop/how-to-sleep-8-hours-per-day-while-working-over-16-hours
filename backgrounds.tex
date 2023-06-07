@@ -1,0 +1,31 @@
+\section{backgrounds}
+
+The central problem in the field of sleep and productivity is the challenge of balancing adequate sleep with demanding work schedules, particularly in the context of working over 16 hours per day. This issue has significant implications for both individual well-being and organizational performance, as inadequate sleep can lead to decreased cognitive function, impaired decision-making, and reduced productivity \citep{manzar2021anxiety}. Furthermore, poor sleep hygiene practices have been linked to a range of negative outcomes, including increased anxiety, reduced academic performance, and diminished work-life balance \citep{humphries2021dysfunctional,molla2021magnitude}. In this paper, we investigate the potential of machine learning techniques to optimize sleep schedules and improve overall well-being while working over 16 hours per day.
+
+\subsection{Foundational Concepts and Notations}
+
+To address the problem of optimizing sleep schedules, we first introduce the foundational concepts and notations that underpin our research. Let $s_i$ represent the $i$-th sleep session, and let $w_i$ represent the $i$-th work session. We assume that each individual has a fixed chronotype, denoted by $c \in \{1, 2, \ldots, C\}$, which represents their natural sleep-wake preference \citep{lin2022chronotype}. The objective is to find an optimal sleep schedule $S = \{s_1, s_2, \ldots, s_n\}$ and work schedule $W = \{w_1, w_2, \ldots, w_n\}$ that maximizes both sleep quality and productivity.
+
+We define sleep quality as a function of sleep duration, sleep efficiency, and sleep timing consistency, denoted by $Q(s_i)$. Sleep efficiency is the ratio of total sleep time to time spent in bed, and sleep timing consistency is the degree to which sleep onset and offset times remain stable across days \citep{martin2020associations}. Productivity, denoted by $P(w_i)$, is a function of work duration, work intensity, and work-life balance. Work intensity is the degree to which an individual is engaged in their work tasks, and work-life balance refers to the equilibrium between work demands and personal life \citep{mulang2022analysis}.
+
+\subsection{Mathematical Formulation}
+
+Given the sleep quality function $Q(s_i)$ and productivity function $P(w_i)$, our goal is to find the optimal sleep and work schedules $S^*$ and $W^*$ that maximize the overall objective function $O(S, W)$. We formulate this as a constrained optimization problem:
+
+\begin{equation}
+\begin{aligned}
+& \underset{S, W}{\text{maximize}}
+& & O(S, W) = \sum_{i=1}^{n} Q(s_i) + \sum_{i=1}^{n} P(w_i) \\
+& \text{subject to}
+& & \sum_{i=1}^{n} d(s_i) \geq 8, \\
+&&& \sum_{i=1}^{n} d(w_i) \geq 16,
+\end{aligned}
+\end{equation}
+
+where $d(s_i)$ and $d(w_i)$ represent the duration of the $i$-th sleep and work sessions, respectively. The constraints ensure that the total sleep duration is at least 8 hours per day, and the total work duration is at least 16 hours per day.
+
+\subsection{Application in the Paper}
+
+In this paper, we apply machine learning techniques to solve the optimization problem defined in Eq. (1). We first use clustering algorithms, such as agglomerative hierarchical clustering, to identify distinct sleep and work patterns in the data \citep{uzir2020analytics}. Next, we employ regression models to predict sleep quality and productivity as functions of sleep and work schedules, respectively. Finally, we use optimization algorithms, such as genetic algorithms or gradient-based methods, to find the optimal sleep and work schedules that maximize the overall objective function.
+
+By leveraging machine learning techniques, we aim to provide personalized sleep and work schedule recommendations that can help individuals achieve better sleep quality and productivity while working over 16 hours per day. This approach has the potential to improve overall well-being and work-life balance, ultimately benefiting both individuals and organizations.
